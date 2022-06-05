@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    druid:
+      username: view
+      password: Ww99315741748
+      url: jdbc:mysql://sh-cynosdbmysql-grp-51t6suuq.sql.tencentcdb.com:25838/study
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initial-size: 8
+      max-active: 16
+      min-idle: 1
+      max-wait: 60000
+
+
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*,"
+
+      stat-view-servlet:
+        enabled: true
+        login-username: admin
+        login-password: admin
+        reset-enable: false
+        url-pattern: /druid/*
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.viewwuyou.blog.repository.model
+
